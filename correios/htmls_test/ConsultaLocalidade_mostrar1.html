@@ -1,0 +1,163 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!-- saved from url=(0085)https://www2.correios.com.br/sistemas/buscacep/consultaLocalidade.cfm?mostrar=1&UF=TO -->
+<html lang="pt-br"><head><meta http-equiv="Content-Type" content="text/html; charset=windows-1252"><script type="text/javascript" src="./ConsultaLocalidade_mostrar1_files/cfform.js"></script>
+<script type="text/javascript" src="./ConsultaLocalidade_mostrar1_files/masks.js"></script>
+
+	
+<!-- AppInternalsXpert BMX Integration Begin -->
+<script>
+if(!RVBD_EUE){
+   var RVBD_EUE={startJS:Number(new Date()),
+   clientId:'',appId:1,
+   collector:'apmperformance.correios.com.br',
+   collectorHttpPort:80, collectorHttpsPort:443,
+   sv:'0401',
+   ajax:true, sync:true,
+   ajaxResponseTime:true};
+   (function(){
+      var w=window,l=w.addEventListener,m=w.attachEvent,
+      d=document,s='script',t='load',o=RVBD_EUE,
+      r=(('https:'===d.location.protocol)?
+      'https://apmperformance.correios.com.br:443':
+      'http://apmperformance.correios.com.br:80')+
+      '/jsi/riverbed_appinternals.d.'+
+      (o.ajax?'ajax.js':'js'),p=('onpagehide' in w),e=p?'pageshow':t,
+      j=d.createElement(s),x=d.getElementsByTagName(s)[0],
+      h=function(y){o.ldJS=o.ldJS||new Date();o.per=y?y.persisted:null;},
+      i=function(){o.ld=1;};o.cookie=d.cookie;d.cookie=
+      '_op_aixPageId=0; path=/; expires='+(new Date(0)).toGMTString();
+      o.cookieAfterDelete=d.cookie;j.async=1;j.src=r;
+      if(l){l(e,h,false);if(p){l(t,i,false);}}else if(m)
+      {m('on'+e,h);if(p){m('on'+t,i);}}
+      if(o.sync){d.write('<'+s+' src=\''+r+'\'></'+s+'>');}
+      else{x.parentNode.insertBefore(j,x);}
+   })();}
+</script><script src="./ConsultaLocalidade_mostrar1_files/riverbed_appinternals.d.ajax.js"></script>
+<script>if(!RVBD_EUE_PARAM){var RVBD_EUE_PARAM={};} RVBD_EUE_PARAM.pageId = 'a2_f0edf32f-f945-4577-ae2f-c09d1187289a';</script>             
+<!-- AppInternalsXpert BMX Integration End -->
+<script type="text/javascript" src="./ConsultaLocalidade_mostrar1_files/cfform.js"></script>
+	<script type="text/javascript" src="./ConsultaLocalidade_mostrar1_files/masks.js"></script>
+	<meta http-equiv="Content-Language" content="pt">
+	
+	<meta http-equiv="X-UA-Compatible" content="IE=EDGE">
+	<title>Busca CEP</title>
+	<meta name="description" content="[page]">
+	<meta name="keywords" content="">
+	<noscript><p>identificador da p&Atilde;¡gina</p></noscript>
+	<link href="./ConsultaLocalidade_mostrar1_files/layout.css" rel="stylesheet" type="text/css">
+	<script type="text/javascript">
+<!--
+    _CF_checkGeral = function(_CF_this)
+    {
+        //reset on submit
+        _CF_error_exists = false;
+        _CF_error_messages = new Array();
+        _CF_error_fields = new Object();
+        _CF_FirstErrorField = null;
+
+
+        //display error messages and return success
+        if( _CF_error_exists )
+        {
+            if( _CF_error_messages.length > 0 )
+            {
+                // show alert() message
+                _CF_onErrorAlert(_CF_error_messages);
+                // set focus to first form error, if the field supports js focus().
+                if( _CF_this[_CF_FirstErrorField].type == "text" )
+                { _CF_this[_CF_FirstErrorField].focus(); }
+
+            }
+            return false;
+        }else {
+            return true;
+        }
+    }
+//-->
+</script>
+</head>
+	<body class="vsc-initialized">
+		<div class="ctrlcontent">
+			
+			
+			<script language="JavaScript" type="text/javascript">
+	  		function EnviaDados(UF,Localidade) 		
+			{	
+			window.opener.document.Geral.UF.value=UF;	
+			window.opener.document.Geral.Localidade.value=Localidade.replace("%27","'");
+	    	window.close();
+	  		}
+			
+			function ConsultarLocalidade(campo)
+			{   
+			if (document.Geral.UF.value == "")
+			{
+				alert("Selecione a UF.");
+				document.Geral.UF.focus();
+				return;
+				}
+				document.Geral.Letra.value = campo;
+				document.Geral.action='consultaLocalidade.cfm?mostrar=2';
+				document.Geral.submit();
+			}
+			</script>
+			
+			<form name="Geral" id="Geral" action="https://www2.correios.com.br/sistemas/buscacep/consultaLocalidade.cfm?mostrar=1&amp;UF=TO" method="post" onsubmit="return _CF_checkGeral(this)">
+		      		<p>Clique na letra inicial/número da Localidade.</p>
+		      		<div class="form">
+		        		<div class="contentform"> <span>
+		          			<label> UF: <br>
+								<input disabled="" type="text" maxlength="2" size="2" value="TO" <="">
+								<input type="Hidden" name="UF" value="TO" <=""> 
+					        </label>
+							
+									<a href="JavaScript:ConsultarLocalidade(&#39;A&#39;)" name="Letra">A&nbsp;</a> 
+								
+									<a href="JavaScript:ConsultarLocalidade(&#39;B&#39;)" name="Letra">B&nbsp;</a> 
+								
+									<a href="JavaScript:ConsultarLocalidade(&#39;C&#39;)" name="Letra">C&nbsp;</a> 
+								
+									<a href="JavaScript:ConsultarLocalidade(&#39;D&#39;)" name="Letra">D&nbsp;</a> 
+								
+									<a href="JavaScript:ConsultarLocalidade(&#39;E&#39;)" name="Letra">E&nbsp;</a> 
+								
+									<a href="JavaScript:ConsultarLocalidade(&#39;F&#39;)" name="Letra">F&nbsp;</a> 
+								
+									<a href="JavaScript:ConsultarLocalidade(&#39;G&#39;)" name="Letra">G&nbsp;</a> 
+								
+									<a href="JavaScript:ConsultarLocalidade(&#39;I&#39;)" name="Letra">I&nbsp;</a> 
+								
+									<a href="JavaScript:ConsultarLocalidade(&#39;J&#39;)" name="Letra">J&nbsp;</a> 
+								
+									<a href="JavaScript:ConsultarLocalidade(&#39;L&#39;)" name="Letra">L&nbsp;</a> 
+								
+									<a href="JavaScript:ConsultarLocalidade(&#39;M&#39;)" name="Letra">M&nbsp;</a> 
+								
+									<a href="JavaScript:ConsultarLocalidade(&#39;N&#39;)" name="Letra">N&nbsp;</a> 
+								
+									<a href="JavaScript:ConsultarLocalidade(&#39;O&#39;)" name="Letra">O&nbsp;</a> 
+								
+									<a href="JavaScript:ConsultarLocalidade(&#39;P&#39;)" name="Letra">P&nbsp;</a> 
+								
+									<a href="JavaScript:ConsultarLocalidade(&#39;R&#39;)" name="Letra">R&nbsp;</a> 
+								
+									<a href="JavaScript:ConsultarLocalidade(&#39;S&#39;)" name="Letra">S&nbsp;</a> 
+								
+									<a href="JavaScript:ConsultarLocalidade(&#39;T&#39;)" name="Letra">T&nbsp;</a> 
+								
+									<a href="JavaScript:ConsultarLocalidade(&#39;V&#39;)" name="Letra">V&nbsp;</a> 
+								
+									<a href="JavaScript:ConsultarLocalidade(&#39;W&#39;)" name="Letra">W&nbsp;</a> 
+								
+									<a href="JavaScript:ConsultarLocalidade(&#39;X&#39;)" name="Letra">X&nbsp;</a> 
+								
+							<input type="hidden" name="Letra" value="">
+							</span> 
+						</div> 
+		      		</div> 
+				</form>
+
+		</div> 
+	
+
+</body></html>

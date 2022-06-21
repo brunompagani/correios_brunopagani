@@ -1,0 +1,310 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!-- saved from url=(0079)https://www2.correios.com.br/sistemas/buscacep/consultaLocalidade.cfm?mostrar=2 -->
+<html lang="pt-br"><head><meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+	
+<!-- AppInternalsXpert BMX Integration Begin -->
+<script>
+if(!RVBD_EUE){
+   var RVBD_EUE={startJS:Number(new Date()),
+   clientId:'',appId:1,
+   collector:'apmperformance.correios.com.br',
+   collectorHttpPort:80, collectorHttpsPort:443,
+   sv:'0401',
+   ajax:true, sync:true,
+   ajaxResponseTime:true};
+   (function(){
+      var w=window,l=w.addEventListener,m=w.attachEvent,
+      d=document,s='script',t='load',o=RVBD_EUE,
+      r=(('https:'===d.location.protocol)?
+      'https://apmperformance.correios.com.br:443':
+      'http://apmperformance.correios.com.br:80')+
+      '/jsi/riverbed_appinternals.d.'+
+      (o.ajax?'ajax.js':'js'),p=('onpagehide' in w),e=p?'pageshow':t,
+      j=d.createElement(s),x=d.getElementsByTagName(s)[0],
+      h=function(y){o.ldJS=o.ldJS||new Date();o.per=y?y.persisted:null;},
+      i=function(){o.ld=1;};o.cookie=d.cookie;d.cookie=
+      '_op_aixPageId=0; path=/; expires='+(new Date(0)).toGMTString();
+      o.cookieAfterDelete=d.cookie;j.async=1;j.src=r;
+      if(l){l(e,h,false);if(p){l(t,i,false);}}else if(m)
+      {m('on'+e,h);if(p){m('on'+t,i);}}
+      if(o.sync){d.write('<'+s+' src=\''+r+'\'></'+s+'>');}
+      else{x.parentNode.insertBefore(j,x);}
+   })();}
+</script><script src="./ConsultaLocalidade_mostrar2_files/riverbed_appinternals.d.ajax.js"></script>
+<script>if(!RVBD_EUE_PARAM){var RVBD_EUE_PARAM={};} RVBD_EUE_PARAM.pageId = 'a2_050c33d5-54ad-4282-8ff9-092251c02ec8';</script>             
+<!-- AppInternalsXpert BMX Integration End -->
+<script type="text/javascript" src="./ConsultaLocalidade_mostrar2_files/cfform.js"></script>
+	<script type="text/javascript" src="./ConsultaLocalidade_mostrar2_files/masks.js"></script>
+	<meta http-equiv="Content-Language" content="pt">
+	
+	<meta http-equiv="X-UA-Compatible" content="IE=EDGE">
+	<title>Busca CEP</title>
+	<meta name="description" content="[page]">
+	<meta name="keywords" content="">
+	<noscript><p>identificador da p&Atilde;¡gina</p></noscript>
+	<link href="./ConsultaLocalidade_mostrar2_files/layout.css" rel="stylesheet" type="text/css">
+	</head>
+	<body class="vsc-initialized">
+		<div class="ctrlcontent">
+			
+			
+			<script language="JavaScript" type="text/javascript">
+	  		function EnviaDados(UF,Localidade) 		
+			{	
+			window.opener.document.Geral.UF.value=UF;	
+			window.opener.document.Geral.Localidade.value=Localidade.replace("%27","'");
+	    	window.close();
+	  		}
+			
+			function ConsultarLocalidade(campo)
+			{   
+			if (document.Geral.UF.value == "")
+			{
+				alert("Selecione a UF.");
+				document.Geral.UF.focus();
+				return;
+				}
+				document.Geral.Letra.value = campo;
+				document.Geral.action='consultaLocalidade.cfm?mostrar=2';
+				document.Geral.submit();
+			}
+			</script>
+			
+			DADOS LOCALIZADOS COM SUCESSO.<br><br> 
+		      		<table border="1">
+						
+						            	<tbody><tr>
+						                	<td>&nbsp;</td>
+						                	<td width="115"><b>Localidade:</b></td>
+						                	<td width="70"><b>CEP:</b></td>
+						              	</tr>
+				              			<tr>
+				                			<td><input type="radio" name="grupo" value="Abreulândia" onclick="EnviaDados(&quot;TO&quot;,&quot;Abreulândia&quot;)" <="" td="">
+				                			
+				                  				</td><td width="150">Abreulândia/TO</td>
+				                  			
+				                			<td width="150">
+												77693-000 
+				                			</td>
+				              			</tr>
+				              		
+				              			<tr>
+				                			<td><input type="radio" name="grupo" value="Aguiarnópolis" onclick="EnviaDados(&quot;TO&quot;,&quot;Aguiarnópolis&quot;)"></td>
+				                				
+				                  					<td width="150">Aguiarnópolis/TO</td>
+				                  				
+				                				<td width="200">
+													77908-000 
+				                				</td>
+				              			</tr>
+				            		
+				              			<tr>
+				                			<td><input type="radio" name="grupo" value="Aliança do Tocantins" onclick="EnviaDados(&quot;TO&quot;,&quot;Aliança do Tocantins&quot;)"></td>
+				                				
+				                  					<td width="150">Aliança do Tocantins/TO</td>
+				                  				
+				                				<td width="200">
+													77455-000 
+				                				</td>
+				              			</tr>
+				            		
+				              			<tr>
+				                			<td><input type="radio" name="grupo" value="Almas" onclick="EnviaDados(&quot;TO&quot;,&quot;Almas&quot;)"></td>
+				                				
+				                  					<td width="150">Almas/TO</td>
+				                  				
+				                				<td width="200">
+													77310-000 
+				                				</td>
+				              			</tr>
+				            		
+				              			<tr>
+				                			<td><input type="radio" name="grupo" value="Alvorada" onclick="EnviaDados(&quot;TO&quot;,&quot;Alvorada&quot;)"></td>
+				                				
+				                  					<td width="150">Alvorada/TO</td>
+				                  				
+				                				<td width="200">
+													77480-000 
+				                				</td>
+				              			</tr>
+				            		
+				              			<tr>
+				                			<td><input type="radio" name="grupo" value="Anajanópolis" onclick="EnviaDados(&quot;TO&quot;,&quot;Anajanópolis&quot;)"></td>
+				                				
+				                  					<td width="150">Anajanópolis (Pedro Afonso)/TO</td>
+				                				
+				                				<td width="200">
+													77712-000 
+				                				</td>
+				              			</tr>
+				            		
+				              			<tr>
+				                			<td><input type="radio" name="grupo" value="Ananás" onclick="EnviaDados(&quot;TO&quot;,&quot;Ananás&quot;)"></td>
+				                				
+				                  					<td width="150">Ananás/TO</td>
+				                  				
+				                				<td width="200">
+													77890-000 
+				                				</td>
+				              			</tr>
+				            		
+				              			<tr>
+				                			<td><input type="radio" name="grupo" value="Angico" onclick="EnviaDados(&quot;TO&quot;,&quot;Angico&quot;)"></td>
+				                				
+				                  					<td width="150">Angico/TO</td>
+				                  				
+				                				<td width="200">
+													77905-000 
+				                				</td>
+				              			</tr>
+				            		
+				              			<tr>
+				                			<td><input type="radio" name="grupo" value="Aparecida do Rio Negro" onclick="EnviaDados(&quot;TO&quot;,&quot;Aparecida do Rio Negro&quot;)"></td>
+				                				
+				                  					<td width="150">Aparecida do Rio Negro/TO</td>
+				                  				
+				                				<td width="200">
+													77620-000 
+				                				</td>
+				              			</tr>
+				            		
+				              			<tr>
+				                			<td><input type="radio" name="grupo" value="Apinajé" onclick="EnviaDados(&quot;TO&quot;,&quot;Apinajé&quot;)"></td>
+				                				
+				                  					<td width="150">Apinajé (São Valério da Natividade)/TO</td>
+				                				
+				                				<td width="200">
+													77393-000 
+				                				</td>
+				              			</tr>
+				            		
+				              			<tr>
+				                			<td><input type="radio" name="grupo" value="Aragaçuí" onclick="EnviaDados(&quot;TO&quot;,&quot;Aragaçuí&quot;)"></td>
+				                				
+				                  					<td width="150">Aragaçuí (Caseara)/TO</td>
+				                				
+				                				<td width="200">
+													77683-000 
+				                				</td>
+				              			</tr>
+				            		
+				              			<tr>
+				                			<td><input type="radio" name="grupo" value="Aragominas" onclick="EnviaDados(&quot;TO&quot;,&quot;Aragominas&quot;)"></td>
+				                				
+				                  					<td width="150">Aragominas/TO</td>
+				                  				
+				                				<td width="200">
+													77845-000 
+				                				</td>
+				              			</tr>
+				            		
+				              			<tr>
+				                			<td><input type="radio" name="grupo" value="Araguacema" onclick="EnviaDados(&quot;TO&quot;,&quot;Araguacema&quot;)"></td>
+				                				
+				                  					<td width="150">Araguacema/TO</td>
+				                  				
+				                				<td width="200">
+													77690-000 
+				                				</td>
+				              			</tr>
+				            		
+				              			<tr>
+				                			<td><input type="radio" name="grupo" value="Araguaçu" onclick="EnviaDados(&quot;TO&quot;,&quot;Araguaçu&quot;)"></td>
+				                				
+				                  					<td width="150">Araguaçu/TO</td>
+				                  				
+				                				<td width="200">
+													77475-000 
+				                				</td>
+				              			</tr>
+				            		
+				              			<tr>
+				                			<td><input type="radio" name="grupo" value="Araguaína" onclick="EnviaDados(&quot;TO&quot;,&quot;Araguaína&quot;)"></td>
+				                				
+				                  					<td width="150">Araguaína/TO</td>
+				                  				
+				                				<td width="200">
+													
+														Cep por logradouro
+													
+				                				</td>
+				              			</tr>
+				            		
+				              			<tr>
+				                			<td><input type="radio" name="grupo" value="Araguanã" onclick="EnviaDados(&quot;TO&quot;,&quot;Araguanã&quot;)"></td>
+				                				
+				                  					<td width="150">Araguanã/TO</td>
+				                  				
+				                				<td width="200">
+													77855-000 
+				                				</td>
+				              			</tr>
+				            		
+				              			<tr>
+				                			<td><input type="radio" name="grupo" value="Araguatins" onclick="EnviaDados(&quot;TO&quot;,&quot;Araguatins&quot;)"></td>
+				                				
+				                  					<td width="150">Araguatins/TO</td>
+				                  				
+				                				<td width="200">
+													77950-000 
+				                				</td>
+				              			</tr>
+				            		
+				              			<tr>
+				                			<td><input type="radio" name="grupo" value="Arapoema" onclick="EnviaDados(&quot;TO&quot;,&quot;Arapoema&quot;)"></td>
+				                				
+				                  					<td width="150">Arapoema/TO</td>
+				                  				
+				                				<td width="200">
+													77780-000 
+				                				</td>
+				              			</tr>
+				            		
+				              			<tr>
+				                			<td><input type="radio" name="grupo" value="Arraias" onclick="EnviaDados(&quot;TO&quot;,&quot;Arraias&quot;)"></td>
+				                				
+				                  					<td width="150">Arraias/TO</td>
+				                  				
+				                				<td width="200">
+													77330-000 
+				                				</td>
+				              			</tr>
+				            		
+				              			<tr>
+				                			<td><input type="radio" name="grupo" value="Augustinópolis" onclick="EnviaDados(&quot;TO&quot;,&quot;Augustinópolis&quot;)"></td>
+				                				
+				                  					<td width="150">Augustinópolis/TO</td>
+				                  				
+				                				<td width="200">
+													77960-000 
+				                				</td>
+				              			</tr>
+				            		
+				              			<tr>
+				                			<td><input type="radio" name="grupo" value="Aurora do Tocantins" onclick="EnviaDados(&quot;TO&quot;,&quot;Aurora do Tocantins&quot;)"></td>
+				                				
+				                  					<td width="150">Aurora do Tocantins/TO</td>
+				                  				
+				                				<td width="200">
+													77325-000 
+				                				</td>
+				              			</tr>
+				            		
+				              			<tr>
+				                			<td><input type="radio" name="grupo" value="Axixá do Tocantins" onclick="EnviaDados(&quot;TO&quot;,&quot;Axixá do Tocantins&quot;)"></td>
+				                				
+				                  					<td width="150">Axixá do Tocantins/TO</td>
+				                  				
+				                				<td width="200">
+													77930-000 
+				                				</td>
+				              			</tr>
+				            		
+					</tbody></table>
+					<a href="javascript:history.back()">Voltar</a>&nbsp;&nbsp;
+					<a href="javascript:window.close()">Fechar</a>
+		     	
+		</div> 
+	
+
+</body></html>

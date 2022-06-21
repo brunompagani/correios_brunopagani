@@ -1,0 +1,237 @@
+2022-06-21 14:59:54 [scrapy.utils.log] INFO: Scrapy 2.6.1 started (bot: correios)
+2022-06-21 14:59:54 [scrapy.utils.log] INFO: Versions: lxml 4.9.0.0, libxml2 2.9.14, cssselect 1.1.0, parsel 1.6.0, w3lib 1.22.0, Twisted 22.4.0, Python 3.9.5 (v3.9.5:0a7dcbdb13, May  3 2021, 13:17:02) - [Clang 6.0 (clang-600.0.57)], pyOpenSSL 22.0.0 (OpenSSL 3.0.3 3 May 2022), cryptography 37.0.2, Platform macOS-10.16-x86_64-i386-64bit
+2022-06-21 14:59:54 [scrapy.crawler] INFO: Overridden settings:
+{'BOT_NAME': 'correios',
+ 'LOG_FILE': PosixPath('logs/log_spiders.txt'),
+ 'LOG_LEVEL': 'INFO',
+ 'NEWSPIDER_MODULE': 'correios.spiders',
+ 'ROBOTSTXT_OBEY': True,
+ 'SPIDER_MODULES': ['correios.spiders']}
+2022-06-21 14:59:54 [scrapy.extensions.telnet] INFO: Telnet Password: cbbf89108a63d640
+2022-06-21 14:59:54 [scrapy.middleware] INFO: Enabled extensions:
+['scrapy.extensions.corestats.CoreStats',
+ 'scrapy.extensions.telnet.TelnetConsole',
+ 'scrapy.extensions.memusage.MemoryUsage',
+ 'scrapy.extensions.feedexport.FeedExporter',
+ 'scrapy.extensions.logstats.LogStats']
+2022-06-21 14:59:55 [scrapy.middleware] INFO: Enabled downloader middlewares:
+['scrapy.downloadermiddlewares.robotstxt.RobotsTxtMiddleware',
+ 'scrapy.downloadermiddlewares.httpauth.HttpAuthMiddleware',
+ 'scrapy.downloadermiddlewares.downloadtimeout.DownloadTimeoutMiddleware',
+ 'scrapy.downloadermiddlewares.defaultheaders.DefaultHeadersMiddleware',
+ 'scrapy.downloadermiddlewares.useragent.UserAgentMiddleware',
+ 'correios.middlewares.RotateUserAgentMiddleware',
+ 'correios.middlewares.CorreiosDownloaderMiddleware',
+ 'scrapy.downloadermiddlewares.retry.RetryMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.MetaRefreshMiddleware',
+ 'scrapy.downloadermiddlewares.httpcompression.HttpCompressionMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.RedirectMiddleware',
+ 'scrapy.downloadermiddlewares.cookies.CookiesMiddleware',
+ 'scrapy.downloadermiddlewares.httpproxy.HttpProxyMiddleware',
+ 'scrapy.downloadermiddlewares.stats.DownloaderStats']
+2022-06-21 14:59:55 [scrapy.middleware] INFO: Enabled spider middlewares:
+['scrapy.spidermiddlewares.httperror.HttpErrorMiddleware',
+ 'scrapy.spidermiddlewares.offsite.OffsiteMiddleware',
+ 'scrapy.spidermiddlewares.referer.RefererMiddleware',
+ 'scrapy.spidermiddlewares.urllength.UrlLengthMiddleware',
+ 'scrapy.spidermiddlewares.depth.DepthMiddleware']
+2022-06-21 14:59:55 [scrapy.middleware] INFO: Enabled item pipelines:
+['correios.pipelines.DuplicatesPipeline',
+ 'correios.pipelines.UniqueKeyPipeline',
+ 'correios.pipelines.ScrapedDatePipeline']
+2022-06-21 14:59:55 [scrapy.core.engine] INFO: Spider opened
+2022-06-21 14:59:55 [scrapy.extensions.logstats] INFO: Crawled 0 pages (at 0 pages/min), scraped 0 items (at 0 items/min)
+2022-06-21 14:59:55 [correios] INFO: Spider opened: correios
+2022-06-21 14:59:55 [scrapy.extensions.telnet] INFO: Telnet console listening on 127.0.0.1:6023
+2022-06-21 14:59:55 [py.warnings] WARNING: /Users/brunompagani/Documents/DataScience/Neoway_teste_tecnico/venv/lib/python3.9/site-packages/scrapy/core/engine.py:276: ScrapyDeprecationWarning: Passing a 'spider' argument to ExecutionEngine.download is deprecated
+  return self.download(result, spider) if isinstance(result, Request) else result
+
+2022-06-21 14:59:56 [scrapy.downloadermiddlewares.retry] ERROR: Gave up retrying <GET http://localhost:8080/robots.txt> (failed 3 times): Connection was refused by other side: 61: Connection refused.
+2022-06-21 14:59:56 [scrapy.downloadermiddlewares.robotstxt] ERROR: Error downloading <GET http://localhost:8080/robots.txt>: Connection was refused by other side: 61: Connection refused.
+Traceback (most recent call last):
+  File "/Users/brunompagani/Documents/DataScience/Neoway_teste_tecnico/venv/lib/python3.9/site-packages/scrapy/core/downloader/middleware.py", line 49, in process_request
+    return (yield download_func(request=request, spider=spider))
+twisted.internet.error.ConnectionRefusedError: Connection was refused by other side: 61: Connection refused.
+2022-06-21 14:59:57 [scrapy.downloadermiddlewares.retry] ERROR: Gave up retrying <GET http://localhost:8080/buscaFaixaCep.html> (failed 3 times): Connection was refused by other side: 61: Connection refused.
+2022-06-21 14:59:57 [scrapy.downloadermiddlewares.retry] ERROR: Gave up retrying <GET http://localhost:8080/ResultadoBuscaFaixaCep.html> (failed 3 times): Connection was refused by other side: 61: Connection refused.
+2022-06-21 14:59:57 [scrapy.core.engine] INFO: Closing spider (finished)
+2022-06-21 14:59:57 [scrapy.statscollectors] INFO: Dumping Scrapy stats:
+{'downloader/exception_count': 9,
+ 'downloader/exception_type_count/twisted.internet.error.ConnectionRefusedError': 9,
+ 'downloader/request_bytes': 2551,
+ 'downloader/request_count': 9,
+ 'downloader/request_method_count/GET': 9,
+ 'elapsed_time_seconds': 2.042613,
+ 'finish_reason': 'finished',
+ 'finish_time': datetime.datetime(2022, 6, 21, 17, 59, 57, 263683),
+ 'log_count/ERROR': 4,
+ 'log_count/INFO': 11,
+ 'log_count/WARNING': 1,
+ 'memusage/max': 56332288,
+ 'memusage/startup': 56332288,
+ 'retry/count': 6,
+ 'retry/max_reached': 3,
+ 'retry/reason_count/twisted.internet.error.ConnectionRefusedError': 6,
+ "robotstxt/exception_count/<class 'twisted.internet.error.ConnectionRefusedError'>": 1,
+ 'robotstxt/request_count': 1,
+ 'scheduler/dequeued': 6,
+ 'scheduler/dequeued/memory': 6,
+ 'scheduler/enqueued': 6,
+ 'scheduler/enqueued/memory': 6,
+ 'start_time': datetime.datetime(2022, 6, 21, 17, 59, 55, 221070)}
+2022-06-21 14:59:57 [scrapy.core.engine] INFO: Spider closed (finished)
+2022-06-21 15:28:58 [scrapy.utils.log] INFO: Scrapy 2.6.1 started (bot: correios)
+2022-06-21 15:28:58 [scrapy.utils.log] INFO: Versions: lxml 4.9.0.0, libxml2 2.9.14, cssselect 1.1.0, parsel 1.6.0, w3lib 1.22.0, Twisted 22.4.0, Python 3.9.5 (v3.9.5:0a7dcbdb13, May  3 2021, 13:17:02) - [Clang 6.0 (clang-600.0.57)], pyOpenSSL 22.0.0 (OpenSSL 3.0.3 3 May 2022), cryptography 37.0.2, Platform macOS-10.16-x86_64-i386-64bit
+2022-06-21 15:28:58 [scrapy.crawler] INFO: Overridden settings:
+{'BOT_NAME': 'correios',
+ 'LOG_FILE': PosixPath('logs/log_spiders.txt'),
+ 'LOG_LEVEL': 'INFO',
+ 'NEWSPIDER_MODULE': 'correios.spiders',
+ 'ROBOTSTXT_OBEY': True,
+ 'SPIDER_MODULES': ['correios.spiders']}
+2022-06-21 15:28:58 [scrapy.extensions.telnet] INFO: Telnet Password: 4b27a2b4207e848a
+2022-06-21 15:28:58 [scrapy.middleware] INFO: Enabled extensions:
+['scrapy.extensions.corestats.CoreStats',
+ 'scrapy.extensions.telnet.TelnetConsole',
+ 'scrapy.extensions.memusage.MemoryUsage',
+ 'scrapy.extensions.feedexport.FeedExporter',
+ 'scrapy.extensions.logstats.LogStats']
+2022-06-21 15:28:58 [scrapy.middleware] INFO: Enabled downloader middlewares:
+['scrapy.downloadermiddlewares.robotstxt.RobotsTxtMiddleware',
+ 'scrapy.downloadermiddlewares.httpauth.HttpAuthMiddleware',
+ 'scrapy.downloadermiddlewares.downloadtimeout.DownloadTimeoutMiddleware',
+ 'scrapy.downloadermiddlewares.defaultheaders.DefaultHeadersMiddleware',
+ 'scrapy.downloadermiddlewares.useragent.UserAgentMiddleware',
+ 'correios.middlewares.RotateUserAgentMiddleware',
+ 'correios.middlewares.CorreiosDownloaderMiddleware',
+ 'scrapy.downloadermiddlewares.retry.RetryMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.MetaRefreshMiddleware',
+ 'scrapy.downloadermiddlewares.httpcompression.HttpCompressionMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.RedirectMiddleware',
+ 'scrapy.downloadermiddlewares.cookies.CookiesMiddleware',
+ 'scrapy.downloadermiddlewares.httpproxy.HttpProxyMiddleware',
+ 'scrapy.downloadermiddlewares.stats.DownloaderStats']
+2022-06-21 15:28:58 [scrapy.middleware] INFO: Enabled spider middlewares:
+['scrapy.spidermiddlewares.httperror.HttpErrorMiddleware',
+ 'scrapy.spidermiddlewares.offsite.OffsiteMiddleware',
+ 'scrapy.spidermiddlewares.referer.RefererMiddleware',
+ 'scrapy.spidermiddlewares.urllength.UrlLengthMiddleware',
+ 'scrapy.spidermiddlewares.depth.DepthMiddleware']
+2022-06-21 15:28:58 [scrapy.middleware] INFO: Enabled item pipelines:
+['correios.pipelines.DuplicatesPipeline',
+ 'correios.pipelines.UniqueKeyPipeline',
+ 'correios.pipelines.ScrapedDatePipeline']
+2022-06-21 15:28:58 [scrapy.core.engine] INFO: Spider opened
+2022-06-21 15:28:58 [scrapy.extensions.logstats] INFO: Crawled 0 pages (at 0 pages/min), scraped 0 items (at 0 items/min)
+2022-06-21 15:28:58 [correios] INFO: Spider opened: correios
+2022-06-21 15:28:58 [scrapy.extensions.telnet] INFO: Telnet console listening on 127.0.0.1:6023
+2022-06-21 15:29:16 [scrapy.core.engine] INFO: Closing spider (finished)
+2022-06-21 15:29:16 [scrapy.extensions.feedexport] INFO: Stored jsonlines feed (6162 items) in: output/correios.jsonl
+2022-06-21 15:29:16 [scrapy.statscollectors] INFO: Dumping Scrapy stats:
+{'downloader/request_bytes': 182110,
+ 'downloader/request_count': 139,
+ 'downloader/request_method_count/GET': 2,
+ 'downloader/request_method_count/POST': 137,
+ 'downloader/response_bytes': 1458919,
+ 'downloader/response_count': 139,
+ 'downloader/response_status_count/200': 138,
+ 'downloader/response_status_count/404': 1,
+ 'elapsed_time_seconds': 18.055664,
+ 'feedexport/success_count/FileFeedStorage': 1,
+ 'finish_reason': 'finished',
+ 'finish_time': datetime.datetime(2022, 6, 21, 18, 29, 16, 775426),
+ 'httpcompression/response_bytes': 4969135,
+ 'httpcompression/response_count': 138,
+ 'item_scraped_count': 6162,
+ 'log_count/INFO': 12,
+ 'memusage/max': 56033280,
+ 'memusage/startup': 56033280,
+ 'request_depth_max': 19,
+ 'response_received_count': 139,
+ 'robotstxt/request_count': 1,
+ 'robotstxt/response_count': 1,
+ 'robotstxt/response_status_count/404': 1,
+ 'scheduler/dequeued': 138,
+ 'scheduler/dequeued/memory': 138,
+ 'scheduler/enqueued': 138,
+ 'scheduler/enqueued/memory': 138,
+ 'start_time': datetime.datetime(2022, 6, 21, 18, 28, 58, 719762)}
+2022-06-21 15:29:16 [scrapy.core.engine] INFO: Spider closed (finished)
+2022-06-21 15:41:19 [scrapy.utils.log] INFO: Scrapy 2.6.1 started (bot: correios)
+2022-06-21 15:41:19 [scrapy.utils.log] INFO: Versions: lxml 4.9.0.0, libxml2 2.9.14, cssselect 1.1.0, parsel 1.6.0, w3lib 1.22.0, Twisted 22.4.0, Python 3.9.5 (v3.9.5:0a7dcbdb13, May  3 2021, 13:17:02) - [Clang 6.0 (clang-600.0.57)], pyOpenSSL 22.0.0 (OpenSSL 3.0.3 3 May 2022), cryptography 37.0.2, Platform macOS-10.16-x86_64-i386-64bit
+2022-06-21 15:41:19 [scrapy.crawler] INFO: Overridden settings:
+{'BOT_NAME': 'correios',
+ 'LOG_FILE': PosixPath('logs/log_spiders.txt'),
+ 'LOG_LEVEL': 'INFO',
+ 'NEWSPIDER_MODULE': 'correios.spiders',
+ 'ROBOTSTXT_OBEY': True,
+ 'SPIDER_MODULES': ['correios.spiders']}
+2022-06-21 15:41:19 [scrapy.extensions.telnet] INFO: Telnet Password: c30d88714a2aad14
+2022-06-21 15:41:19 [scrapy.middleware] INFO: Enabled extensions:
+['scrapy.extensions.corestats.CoreStats',
+ 'scrapy.extensions.telnet.TelnetConsole',
+ 'scrapy.extensions.memusage.MemoryUsage',
+ 'scrapy.extensions.feedexport.FeedExporter',
+ 'scrapy.extensions.logstats.LogStats']
+2022-06-21 15:41:19 [scrapy.middleware] INFO: Enabled downloader middlewares:
+['scrapy.downloadermiddlewares.robotstxt.RobotsTxtMiddleware',
+ 'scrapy.downloadermiddlewares.httpauth.HttpAuthMiddleware',
+ 'scrapy.downloadermiddlewares.downloadtimeout.DownloadTimeoutMiddleware',
+ 'scrapy.downloadermiddlewares.defaultheaders.DefaultHeadersMiddleware',
+ 'scrapy.downloadermiddlewares.useragent.UserAgentMiddleware',
+ 'correios.middlewares.RotateUserAgentMiddleware',
+ 'correios.middlewares.CorreiosDownloaderMiddleware',
+ 'scrapy.downloadermiddlewares.retry.RetryMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.MetaRefreshMiddleware',
+ 'scrapy.downloadermiddlewares.httpcompression.HttpCompressionMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.RedirectMiddleware',
+ 'scrapy.downloadermiddlewares.cookies.CookiesMiddleware',
+ 'scrapy.downloadermiddlewares.httpproxy.HttpProxyMiddleware',
+ 'scrapy.downloadermiddlewares.stats.DownloaderStats']
+2022-06-21 15:41:19 [scrapy.middleware] INFO: Enabled spider middlewares:
+['scrapy.spidermiddlewares.httperror.HttpErrorMiddleware',
+ 'scrapy.spidermiddlewares.offsite.OffsiteMiddleware',
+ 'scrapy.spidermiddlewares.referer.RefererMiddleware',
+ 'scrapy.spidermiddlewares.urllength.UrlLengthMiddleware',
+ 'scrapy.spidermiddlewares.depth.DepthMiddleware']
+2022-06-21 15:41:19 [scrapy.middleware] INFO: Enabled item pipelines:
+['correios.pipelines.CorreiosPipeline',
+ 'correios.pipelines.DuplicatesPipeline',
+ 'correios.pipelines.UniqueKeyPipeline',
+ 'correios.pipelines.ScrapedDatePipeline']
+2022-06-21 15:41:19 [scrapy.core.engine] INFO: Spider opened
+2022-06-21 15:41:19 [scrapy.extensions.logstats] INFO: Crawled 0 pages (at 0 pages/min), scraped 0 items (at 0 items/min)
+2022-06-21 15:41:19 [correios_complementar] INFO: Spider opened: correios_complementar
+2022-06-21 15:41:19 [scrapy.extensions.telnet] INFO: Telnet console listening on 127.0.0.1:6023
+2022-06-21 15:41:40 [scrapy.core.engine] INFO: Closing spider (finished)
+2022-06-21 15:41:40 [scrapy.extensions.feedexport] INFO: Stored jsonlines feed (11164 items) in: output/correios_complementar.jsonl
+2022-06-21 15:41:40 [scrapy.statscollectors] INFO: Dumping Scrapy stats:
+{'downloader/request_bytes': 715180,
+ 'downloader/request_count': 553,
+ 'downloader/request_method_count/GET': 29,
+ 'downloader/request_method_count/POST': 524,
+ 'downloader/response_bytes': 1990801,
+ 'downloader/response_count': 553,
+ 'downloader/response_status_count/200': 552,
+ 'downloader/response_status_count/404': 1,
+ 'elapsed_time_seconds': 20.510552,
+ 'feedexport/success_count/FileFeedStorage': 1,
+ 'finish_reason': 'finished',
+ 'finish_time': datetime.datetime(2022, 6, 21, 18, 41, 40, 394334),
+ 'httpcompression/response_bytes': 6720674,
+ 'httpcompression/response_count': 552,
+ 'item_scraped_count': 11164,
+ 'log_count/INFO': 12,
+ 'memusage/max': 56131584,
+ 'memusage/startup': 56131584,
+ 'request_depth_max': 2,
+ 'response_received_count': 553,
+ 'robotstxt/request_count': 1,
+ 'robotstxt/response_count': 1,
+ 'robotstxt/response_status_count/404': 1,
+ 'scheduler/dequeued': 552,
+ 'scheduler/dequeued/memory': 552,
+ 'scheduler/enqueued': 552,
+ 'scheduler/enqueued/memory': 552,
+ 'start_time': datetime.datetime(2022, 6, 21, 18, 41, 19, 883782)}
+2022-06-21 15:41:40 [scrapy.core.engine] INFO: Spider closed (finished)
