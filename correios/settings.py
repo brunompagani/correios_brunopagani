@@ -32,8 +32,8 @@ DOWNLOADER_MIDDLEWARES = {
 # Item Pipelines
 # See https://docs.scrapy.org/en/latest/topics/item-pipeline.html
 ITEM_PIPELINES = {
-   'correios.pipelines.CorreiosPipeline': 200,
-   'correios.pipelines.DuplicatesPipeline': 250,
+   'correios.pipelines.DuplicatesPipeline': 200,
+   'correios.pipelines.LogsPipeline': 250,
    'correios.pipelines.UniqueKeyPipeline': 300,
    'correios.pipelines.ScrapedDatePipeline': 400,
 }

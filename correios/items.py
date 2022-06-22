@@ -10,8 +10,8 @@ def str_strip(string):
     return string.strip()
 
 def limpa_localidade_complementar(string):
-    match = re.match(r'.*(?=/[A-Z]{2})', string=string)
-    return match.group(0)
+    cleaned = re.sub(r'/[A-Z]{2}$', '', string=string)
+    return cleaned
 
 class CorreiosItem(scrapy.Item):
     # define the fields for your item here like:

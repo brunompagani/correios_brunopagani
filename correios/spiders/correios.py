@@ -38,7 +38,7 @@ class CorreiosSpider(scrapy.Spider):
         opcoes_uf = response.css('select[name=UF] option::text').getall()
 
         for uf in opcoes_uf:
-                if re.match('[A-Z]{2}', uf):
+                if re.match('^[A-Z]{2}$', uf):
                     formdata={
                         'UF': uf,
                         'Localidade': '**',
@@ -54,6 +54,8 @@ class CorreiosSpider(scrapy.Spider):
                         callback=self.parse_uf,
                         cb_kwargs = {'uf': uf}
                     )
+                    
+                    print(f'Carregamento de páginas de {uf} iniciado') 
 
     def parse_uf(self, response, uf):
         ''' Essa função raspa os dados de uma página de resultados, faz o POST request
@@ -72,11 +74,8 @@ class CorreiosSpider(scrapy.Spider):
         records_list = re.findall('[0-9]{1,4}', records_str)
 
         page_first_rec, page_last_rec, total_records = [int(x) for x in records_list]
-        
-        if page_first_rec == 1:
-            table = response.css('table.tmptabela:nth-of-type(2)')
-        else:
-            table = response.css('table.tmptabela')
+
+        table = response.css('table.tmptabela:last-of-type')
         rows = table.css('tr')
 
         for row in rows:
@@ -107,3 +106,6 @@ class CorreiosSpider(scrapy.Spider):
                 callback=self.parse_uf,
                 cb_kwargs = {'uf': uf}
             )
+
+        if page_last_rec == total_records:
+            print(f'Processamento de páginas e itens em {uf} finalizado!')
