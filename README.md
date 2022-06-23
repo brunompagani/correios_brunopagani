@@ -24,26 +24,21 @@ Antes de executar qualquer script abra um terminal na pasta raiz do repositório
 
 - Crie um ambiante virtual:
 
+
 ```
 % python3 -m venv venv
 ```
 
-Certifique-se de estar usando o Ambiente virtual:
+- Certifique-se de estar usando o Ambiente virtual:
 ```
 % source venv/bin/activate
 ```
 ## Instalando dependências
 
-Instale o Scrapy:
+Instale o Scrapy, pandas, jsonlines e as dependências dessas bibliotecas na versão que eu utilizei:
 ```
-% python -m pip install scrapy
+% python -m pip install -r requirements.txt
 ```
-Para realizar a junção da raspagem básica e da complementar instale também:
-```
-% python -m pip install pandas
-% python -m pip install jsonlines
-```
-O arquivo “requirements.txt” guarda todas as versões utilizadas de cada biblioteca, incluindo suas dependências.
 
 ## Executando o projeto:
 
@@ -72,31 +67,34 @@ No terminal, abra os htmls de teste no seu browser:
 ```
 - Carregue os htmls no browser 
 ```
-python3 -m http.server 8080
+python -m http.server 8080
 ```
 Em uma nova aba do terminal, execute os testes:
 
 - Execute os testes para cada Spider
 ```
-% scrapy check correios -v
-% scrapy check correios_complementar -v
+% scrapy check -v -s LOG_LEVEL="WARNING" correios
+% scrapy check -v -s LOG_LEVEL="WARNING" correios_complementar
 ```
 Descrição dos testes:
 
-Os testes são realizados a partir dos scrapy.contracts, quando executados eles olham para htmls guardados localmente e tentam realizar a raspagem, retornando o sucesso ou a falha de cada um dos contracts.
+Os testes são realizados a partir dos scrapy.contracts, quando executados eles olham para os htmls guardados localmente e tentam realizar a raspagem, retornando o sucesso ou a falha de cada um dos contracts.
 Os parâmetros analisados em cada contract podem ser vistos na docstring de cada função das spiders.
-A decisão pelo de uso arquivos armazenados localmente ajuda a entender se alguma mudança no código quebrou um comportamento esperado da função ou se uma mudança no site foi responsável. É sempre possível atualizar os htmls, simplesmente baixando outro html do site e substituindo o arquivo por um de mesmo nome.
+A decisão pelo de uso de arquivos armazenados localmente ajuda a entender se alguma mudança no código quebrou um comportamento esperado da função ou se uma mudança no site foi responsável. É sempre possível atualizar os htmls, simplesmente baixando outro html do site e substituindo o arquivo por um de mesmo nome.
 
-### Pastas
+## Pastas
 
-#### correios:
-Possui o core do projeto com as spiders e os scripts de apoio
+### correios:
+Possui o core do projeto com as spiders e os scripts de apoio  
 
-#### output:
-Guarda todas as saídas do projeto
+### output:
+Guarda todas as saídas do projeto. 
+Obs : Os arquivos dentro dessa pasta aqui no repositório são um exemplo de uma execução anterior.
 
-#### logs
+### logs:
 Guarda todos os logs do projeto
 
-#### git_resources
+Obs : Os arquivos dentro dessa pasta aqui no repositório são um exemplo de uma execução anterior. Diferente dos arquivos da pasta "output", o log incrementa esse arquivo, então é recomendado que o arquivo exemplo seja excluído ou renomeado.
+
+### git_resources:
 Guarda a/as imagem/ns usadas nesse README
