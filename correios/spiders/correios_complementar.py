@@ -3,6 +3,7 @@ from scrapy.utils.project import get_project_settings
 from correios.items import CorreiosComplementarItem
 from scrapy.loader import ItemLoader
 import re
+import os
 
 class CorreiosComplementarSpider(scrapy.Spider):
     name = 'correios_complementar'
@@ -43,8 +44,8 @@ class CorreiosComplementarSpider(scrapy.Spider):
                         callback=self.parse_uf_letters,
                         cb_kwargs={'uf': uf}
                     )
-                
-                    print(f'Carregamento de páginas de {uf} iniciado')
+                    if not os.environ.get('SCRAPY_CHECK'):
+                        print(f'Carregamento de páginas de {uf} iniciado')
 
     def parse_uf_letters(self, response, uf):
         '''Essa função raspa os dados de letras iniciais para localidades
@@ -78,7 +79,7 @@ class CorreiosComplementarSpider(scrapy.Spider):
         
         Essa docstring contém scrapy.contracts para testes:
         @url http://localhost:8080/ConsultaLocalidade_mostrar2.html
-        @cb_kwargs {"uf": "TO"}
+        @cb_kwargs {"uf": "TO", "last_page_uf": 0}
         @returns requests 0 0
         @returns items 1
         @scrapes uf localidade cep
@@ -102,4 +103,5 @@ class CorreiosComplementarSpider(scrapy.Spider):
                 yield l.load_item()
          
         if last_page_uf and (i == last_row):
-            print(f'Processamento de páginas e itens em {uf} finalizado!')
+            if not os.environ.get('SCRAPY_CHECK'):
+                print(f'Processamento de páginas e itens em {uf} finalizado!')
