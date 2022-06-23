@@ -11,7 +11,9 @@ NEWSPIDER_MODULE = 'correios.spiders'
 #Caminhos
 ROOT_PATH = Path()
 OUTPUT_PATH = ROOT_PATH / 'output'
-LOG_PATH = ROOT_PATH / 'logs' 
+LOG_PATH = ROOT_PATH / 'logs'
+if not LOG_PATH.exists() or not LOG_PATH.is_dir():
+   LOG_PATH.mkdir()
 
 # Logs
 LOG_ENABLED = True
@@ -36,6 +38,7 @@ ITEM_PIPELINES = {
    'correios.pipelines.LogsPipeline': 250,
    'correios.pipelines.UniqueKeyPipeline': 300,
    'correios.pipelines.ScrapedDatePipeline': 400,
+   'correios.pipelines.MyOverwritePipeline': 450,
 }
 
 # User Agents para rotacionar

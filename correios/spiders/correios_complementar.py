@@ -22,7 +22,6 @@ class CorreiosComplementarSpider(scrapy.Spider):
             out_file: {
                 'format': 'jsonlines',
                 'encoding': 'utf8',
-                'overwrite': True,
                 'store_empty': False,
             }
         }

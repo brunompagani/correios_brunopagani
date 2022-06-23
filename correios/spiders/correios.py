@@ -2,8 +2,10 @@ import scrapy
 from scrapy.utils.project import get_project_settings
 from correios.items import CorreiosItem
 from scrapy.loader import ItemLoader
+from datetime import datetime
 import re
 import os
+
 
 class CorreiosSpider(scrapy.Spider):
     name = 'correios'
@@ -21,7 +23,6 @@ class CorreiosSpider(scrapy.Spider):
             out_file: {
                 'format': 'jsonlines',
                 'encoding': 'utf8',
-                'overwrite': True,
                 'store_empty': False,
             }
         }

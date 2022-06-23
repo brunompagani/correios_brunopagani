@@ -81,3 +81,18 @@ class ScrapedDatePipeline:
         adapter['data_raspagem'] = datetime.now().strftime('%Y-%m-%d %H:%M:%S')
 
         return item
+
+class MyOverwritePipeline:
+
+    def close_spider(self, spider):
+        print(spider.out_file)
+        with open(spider.out_file) as f:
+            lines = f.readlines()
+            starts = []
+            for i in range(len(lines)):
+                if '"id": 1,' in lines[i]:
+                    starts.append(i)
+
+        if len(starts) == 2:
+            with open(spider.out_file, 'w') as f:
+                f.writelines(lines[starts[1]:])
