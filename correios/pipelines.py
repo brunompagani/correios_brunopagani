@@ -9,6 +9,7 @@ from itemadapter import ItemAdapter
 from scrapy.exceptions import DropItem
 from datetime import datetime
 import logging
+import os
 
 class LogsPipeline:
 
@@ -16,7 +17,8 @@ class LogsPipeline:
         self.ufs_raspadas = {}
 
     def open_spider(self, spider):
-        print(f'Spider "{spider.name}" iniciada...')
+        if not os.environ.get('SCRAPY_CHECK'):
+            print(f'Spider "{spider.name}" iniciada...')
 
     def process_item(self, item, spider):
         '''Conta ufs extraídas e avisa inicio de cada uf'''
@@ -30,18 +32,19 @@ class LogsPipeline:
         return item
 
     def close_spider(self, spider):
-        print(f'Spider "{spider.name}" finalizada.')
-        print('-------------------------------------------')
-        print(f'Foram coletados {sum(self.ufs_raspadas.values())} itens.')
-        logging.info(f'Foram coletados {sum(self.ufs_raspadas.values())} itens.')
-        print('-------------------------------------------')
-        print('Itens por região:')
-        logging.info('Itens por região:')
-        for uf, qnt in self.ufs_raspadas.items():
-            print(f'{uf}: {qnt} itens')
-            logging.info(f'{uf}: {qnt} itens')
-        print('-------------------------------------------')
-        print('Para mais informações da execução, verifique os logs em logs/log_spiders.txt.')
+        if not os.environ.get('SCRAPY_CHECK'):
+            print(f'Spider "{spider.name}" finalizada.')
+            print('-------------------------------------------')
+            print(f'Foram coletados {sum(self.ufs_raspadas.values())} itens.')
+            logging.info(f'Foram coletados {sum(self.ufs_raspadas.values())} itens.')
+            print('-------------------------------------------')
+            print('Itens por região:')
+            logging.info('Itens por região:')
+            for uf, qnt in self.ufs_raspadas.items():
+                print(f'{uf}: {qnt} itens')
+                logging.info(f'{uf}: {qnt} itens')
+            print('-------------------------------------------')
+            print('Para mais informações da execução, verifique os logs em logs/log_spiders.txt.')
 
 class DuplicatesPipeline:
 

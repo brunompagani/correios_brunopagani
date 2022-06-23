@@ -3,6 +3,7 @@ from scrapy.utils.project import get_project_settings
 from correios.items import CorreiosItem
 from scrapy.loader import ItemLoader
 import re
+import os
 
 class CorreiosSpider(scrapy.Spider):
     name = 'correios'
@@ -55,7 +56,8 @@ class CorreiosSpider(scrapy.Spider):
                         cb_kwargs = {'uf': uf}
                     )
                     
-                    print(f'Carregamento de páginas de {uf} iniciado') 
+                    if not os.environ.get('SCRAPY_CHECK'):
+                        print(f'Carregamento de páginas de {uf} iniciado') 
 
     def parse_uf(self, response, uf):
         ''' Essa função raspa os dados de uma página de resultados, faz o POST request
@@ -87,6 +89,8 @@ class CorreiosSpider(scrapy.Spider):
                 l.add_css('faixa_cep', 'td:nth-child(2)')
                 l.add_css('situacao', 'td:nth-child(3)')
                 l.add_css('tipo_faixa', 'td:nth-child(4)')
+                l.add_css('faixa_cep_min', 'td:nth-child(2)')
+                l.add_css('faixa_cep_max', 'td:nth-child(2)')
 
                 yield l.load_item()
 
